@@ -10,6 +10,9 @@ h3 {
 	font-weight: 600;
 	color:#258faf;
 }
+h4 {
+	font-weight: 600;
+}
 .text-white, .text-white a, .text-white li,  .text-white h1,  .text-white h2,  .text-white h3,  .text-white h4,  .text-white h5 {
 	color:#fff !important;
 	 -webkit-transition: 0.3s; 
@@ -60,15 +63,28 @@ h3 {
 	  -o-background-size: cover;
 	  background-size: cover;
 	padding-bottom: 13em;
-	padding-top: 16em;
+	padding-top: 14em;
 	box-shadow: inset -2px -2px -2px rgba(0,0,0,0.15);
 }
 .ButtonBack {
 	display: block;
 	width: 100%;
-	margin-top: 3em;
-	margin-bottom: 3em;
+	padding: 0.5em;
+	padding-top: 3em;
+	height:195px;
 	text-align: center;
+	margin-bottom: 2em;
+	border:solid 0px;
+	border-radius: 5px;
+	-webkit-transition: 0.3s; 
+}
+.ButtonBack:hover, .ButtonBack:hover h4 {
+	color:#fff !important;
+	text-decoration: none;
+	-webkit-transition: 0.3s; 
+}
+.ButtonBack:hover {
+	background-color:#258faf;
 }
 .disabled {
 	opacity: 0.7;
