@@ -21,7 +21,7 @@ type query struct {
 	Threshold string `json:"threshold"`
 }
 
-type answer struct {
+type countryData struct {
 	StandardRate string            `json:"stadartRate"`
 	Categories   map[string]string `json:"categories"`
 }
@@ -61,21 +61,22 @@ func main() {
 			http.Error(w, err.Error(), 400)
 			return
 		}
-		// output, err := json.Marshal(q)
-		// if err != nil {
-		// 	http.Error(w, err.Error(), 500)
-		// 	return
-		// }
+		answer, err := json.Marshal(q.fetchData())
+		if err != nil {
+			http.Error(w, err.Error(), 500)
+			return
+		}
 		w.Header().Set("Content-Type", "application/json")
-		w.Write([]byte(q.fetchData()))
+		w.Write(answer)
 	})
 	log.Fatal(http.ListenAndServe(*host, nil))
 }
 
-func (q query) fetchData() string {
-	var a answer
-	result := ""
+func (q query) fetchData() countryData {
+	var data countryData
+	data.Categories = make(map[string]string)
 	url := make([]string, 3)
+
 	switch q.Country {
 	case "EE":
 		copy(url, eeJsonServices)
@@ -84,7 +85,7 @@ func (q query) fetchData() string {
 	case "DE":
 		copy(url, deJsonServices)
 	default:
-		return result
+		return data
 	}
 
 	for _, u := range url {
@@ -98,21 +99,18 @@ func (q query) fetchData() string {
 				log.Fatal(err)
 			}
 			bodyString := string(bodyBytes)
-			a.StandardRate = gjson.Get(bodyString, "results.0.standardRate").String()
-			categoryList := gjson.Get(bodyString, "results.0.reducedRates.#.category")
+			if gjson.Get(bodyString, `results.0.standardRate`).Exists() {
+				data.StandardRate = gjson.Get(bodyString, `results.0.standardRate`).String()
+			}
+			categoryList := gjson.Get(bodyString, "results.0.reducedRates")
 			for _, name := range categoryList.Array() {
-				println(gjson.Get(categoryList, "name").String())
+				categoryName := gjson.Get(name.String(), "category.name").String()
+				reducedRate := gjson.Get(name.String(), "reducedRate").String()
+				data.Categories[categoryName] = reducedRate
 			}
 		}
-		// decoder := json.NewDecoder(res.Body)
-		// var data Tracks
-		// err = decoder.Decode(&data)
-		// if err != nil {
-		// 	panic(err)
-		// }
-
 		res.Body.Close()
 	}
 
-	return result
+	return data
 }
