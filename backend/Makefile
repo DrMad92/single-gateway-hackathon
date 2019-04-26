@@ -9,6 +9,7 @@ build:
 deps:
 	go get github.com/gorilla/mux
 	go get github.com/tidwall/gjson
+	go get github.com/rs/cors
 
 clean:
 	go clean
