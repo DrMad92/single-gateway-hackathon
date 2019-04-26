@@ -17,27 +17,63 @@
     <script src="../js/vatchecker.js" type="text/javascript"></script>
 </head>
 <body>
-<div class="top-bar">
+
+<div class="top-bar text-white">
   <div class="top-bar-left">
     <ul class="menu">
-      <li class="menu-text"><a href="../index.html">Unitax</a></li>
+      <li class="menu-text"><a href="../index.html" class="Logo">UNITAX</a></li>
     </ul>
   </div>
   <div class="top-bar-right">
     <ul class="dropdown menu" data-dropdown-menu>
       <li>
-        <a href="#">Tools</a>
-        <ul class="menu vertical">
-          <li><a href="static/vatchecker.html">VAT checker</a></li>
-        </ul>
+        <a href="static/vatchecker.html">UNIVAT</a>
       </li>
-      <li><a href="#">Roadmap</a></li>
-      <li><a href="#">Api documention</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="#" class="disabled">Roadmap</a></li>
+      <li><a href="#">API docs</a></li>
+      <li><a href="#" class="disabled">Contact</a></li>
     </ul>
   </div>
 </div>
-  <div id="wrapper-container">
+  
+  <div class="grid-container">
+    <div class="spacer"></div>
+      <div class="grid-x grid-padding-x">
+        <div class="large-12 cell text-left">
+            <h3>UNIVAT Service</h3>
+            <p>ce the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with</p>
+        </div>
+      </div>
+  </div>
+  <hr/>
+
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="large-6 cell">
+          <form id="form-id">
+              <h3>VAT checker</h3>
+              <label for="category">Choose category</label>
+              <select id="country-select-id" class="form-control" name="category" required>
+                  <option disabled selected value> -- select a country -- </option>
+                  <option value="EE">Estonia</option>
+                  <option value="FI">Finland</option>
+                  <option value="DE">Germany</option>
+              </select>
+              <label for="product">Product</label>
+              <select id="product-select-id" class="form-control" name="product" required>
+                  <option id="empty-select" disabled selected value> -- select a product -- </option>
+              </select>
+          </form>
+      </div>
+      <div class="large-6 cell">
+          <h3>Results</h3>
+          <div id="vat-result-id">
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <!--div id="wrapper-container">
     <div class="row">
       <div id="div-form" class="form-group col-sm-6">
           <form id="form-id">
@@ -61,6 +97,10 @@
           </div>
       </div>
     </div>
+  </div-->
+  <div class="spacer"></div>
+  <div class="grid-container full">
+    <p class="footerInfo text-center">© 2019 United Taxation, All Rights Reserved.</p>
   </div>
 </body>
 </html>
