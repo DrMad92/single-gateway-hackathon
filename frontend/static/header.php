@@ -7,8 +7,8 @@
     <title>Unitax - Tax information made simple</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="stylesheet" src="../style/index.css">
-    <link rel="stylesheet" href="css/foundation.css">
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="../css/foundation.css">
+    <link rel="stylesheet" href="../css/app.css">
 </head>
 <body>
 
