@@ -8,6 +8,7 @@ build:
 
 deps:
 	go get github.com/gorilla/mux
+	go get github.com/tidwall/gjson
 
 clean:
 	go clean

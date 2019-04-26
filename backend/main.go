@@ -6,23 +6,26 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+
+	"github.com/tidwall/gjson"
 )
 
 var (
-	host   = flag.String("host", "0.0.0.0:9999", "host to serve web")
-	dbFile = flag.String("dbfile", "", "Database file")
+	host = flag.String("host", "0.0.0.0:9999", "host to serve web")
 )
 
 type query struct {
-	Country        string `json:"country"`
-	CompanyType    string `json:"companyType"`
-	Revenue        string `json:"revenue"`
-	Product        string `json:"product"`
-	MonthlyRevenue string `json:"monthlyRevenue"`
+	Country   string `json:"country"`
+	Product   string `json:"product"`
+	Revenue   string `json:"revenue"`
+	Threshold string `json:"threshold"`
 }
 
 type answer struct {
+	StandardRate string            `json:"stadartRate"`
+	Categories   map[string]string `json:"categories"`
 }
+
 type Query interface {
 	fetchData()
 }
@@ -70,6 +73,7 @@ func main() {
 }
 
 func (q query) fetchData() string {
+	var a answer
 	result := ""
 	url := make([]string, 3)
 	switch q.Country {
@@ -94,7 +98,11 @@ func (q query) fetchData() string {
 				log.Fatal(err)
 			}
 			bodyString := string(bodyBytes)
-			result += bodyString + "\n"
+			a.StandardRate = gjson.Get(bodyString, "results.0.standardRate").String()
+			categoryList := gjson.Get(bodyString, "results.0.reducedRates.#.category")
+			for _, name := range categoryList.Array() {
+				println(gjson.Get(categoryList, "name").String())
+			}
 		}
 		// decoder := json.NewDecoder(res.Body)
 		// var data Tracks
