@@ -1,0 +1,21 @@
+/*Fonts*/
+
+/*General*/
+
+/*Landing page*/
+.ButtonBack {
+	display: block;
+	width: 100%;
+	margin-top: 3em;
+	margin-bottom: 3em;
+	text-align: center;
+}
+.disabled {
+	opacity: 0.9;
+	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  	filter: grayscale(100%);
+}
+
+/**/
+/**/
+/**/

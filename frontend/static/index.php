@@ -16,25 +16,25 @@
     <div class="grid-container">
       <div class="grid-x grid-padding-x">
         <div class="large-3 cell">
-            <a href="#" class="ButtonBack enabled">
+            <a href="#" class="ButtonBack text-center enabled">
                 <h3>VAT checker</h3>
                 <p>Simple way to understand vat on goods sold</p>
             </a>
         </div>
         <div class="large-3 cell">
-            <a href="#" class="ButtonBack disabled">
+            <a href="#" class="ButtonBack text-center disabled">
                 <h3>Whatever thing</h3>
                 <p>Simple way to undedawdawdawd/p>
             </a>
         </div>
         <div class="large-3 cell">
-            <a href="#" class="ButtonBack disabled">
+            <a href="#" class="ButtonBack text-center disabled">
                 <h3>Whatever thing</h3>
                 <p>Simple way to undedawdawdawd/p>
             </a>
         </div>
         <div class="large-3 cell">
-            <a href="#" class="ButtonBack disabled">
+            <a href="#" class="ButtonBack text-center disabled">
                 <h3>Whatever thing</h3>
                 <p>Simple way to undedawdawdawd/p>
             </a>
