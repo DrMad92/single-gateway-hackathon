@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unified tax</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" src="../style/index.css">
+</head>
+<body>
+    <div id="instructions">
+        <p>Here will be instructions or whatever.</p>
+    </div>
+    <div id="wrapper">
+    <div id="div-form" class="form-group">
+        <form id="form-id">
+            <h1><b>Get tax report</b></h1>
+            <label for="category"><b>Choose category</b></label>
+            <select class="form-control" name="category" required>
+                <option disabled selected value> -- select a country -- </option>
+                <option value="EE">Estonia</option>
+                <option value="FI">Finland</option>
+                <option value="DE">Germany</option>
+            </select>
+            <label for="product">Product</label>
+            <select class="form-control" name="product" required>
+                <option disabled selected value> -- select a product -- </option>
+                <option value="food">Food</option>
+                <option value="clothing">Clothing</option>
+                <option value="electronics">Electronics</option>
+            </select>
+            <label for="price">Price</label>
+            <input type="text" placeholder="Price" name="name" pattern="[0-9]+">
+            <button type="submit" name="add" class="btn btn-primary">Add</button>
+        </form>
+    </div>
+    <div id="div-result">
+        <h1><b>Results</b></h1>
+    </div>
+    </div>
+</body>
+</html>
