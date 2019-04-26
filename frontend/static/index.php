@@ -15,7 +15,7 @@
         </div>
       </div>
 
-      
+
 
       <div class="grid-x grid-padding-x">
         <div class="large-12 cell">
@@ -163,42 +163,6 @@
         </div>
       </div>
     </div>
-
-    <script src="js/vendor/jquery.js"></script>
-    <script src="js/vendor/what-input.js"></script>
-    <script src="js/vendor/foundation.js"></script>
-    <script src="js/app.js"></script>
-  </body>
-</html>
-    <div id="instructions">
-        <p>Here will be instructions or whatever.</p>
-    </div>
-    <div id="wrapper">
-    <div id="div-form" class="form-group">
-        <form id="form-id">
-            <h1><b>Get tax report</b></h1>
-            <label for="category"><b>Choose category</b></label>
-            <select class="form-control" name="category" required>
-                <option disabled selected value> -- select a country -- </option>
-                <option value="EE">Estonia</option>
-                <option value="FI">Finland</option>
-                <option value="DE">Germany</option>
-            </select>
-            <label for="product">Product</label>
-            <select class="form-control" name="product" required>
-                <option disabled selected value> -- select a product -- </option>
-                <option value="food">Food</option>
-                <option value="clothing">Clothing</option>
-                <option value="electronics">Electronics</option>
-            </select>
-            <label for="price">Price</label>
-            <input type="text" placeholder="Price" name="name" pattern="[0-9]+">
-            <button type="submit" name="add" class="btn btn-primary">Add</button>
-        </form>
-    </div>
-    <div id="div-result">
-        <h1><b>Results</b></h1>
-    </div>
-    </div>
-</body>
-</html>
+    
+<?php //Load default footer ?>
+<?php file_get_contents('./footer.php'); ?>
