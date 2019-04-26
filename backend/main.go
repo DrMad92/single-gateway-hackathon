@@ -77,7 +77,6 @@ func main() {
 
 func (q query) fetchData() countryData {
 	var country countryData
-	country.Categories = make([]categoryData, 50)
 
 	url := make([]string, 1)
 
