@@ -27,7 +27,7 @@
   <div class="top-bar-right">
     <ul class="dropdown menu" data-dropdown-menu>
       <li>
-        <a href="static/vatchecker.html">UNIVAT</a>
+        <a href="#">UNIVAT</a>
       </li>
       <li><a href="#" class="disabled">Roadmap</a></li>
       <li><a href="#">API docs</a></li>
@@ -41,7 +41,8 @@
       <div class="grid-x grid-padding-x">
         <div class="large-12 cell text-left">
             <h3>UNIVAT Service</h3>
-            <p>ce the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with</p>
+            <p>Univat service is a great way to explore VAT taxation in export countries. Just select country and product categories (if nessesary), and you will be provided information that help you underestand, how and what belongs into VAT taxation in target country.</p>
+            <a class="apiDocumentationLink">Univat API documentation</a>
         </div>
       </div>
   </div>
@@ -49,27 +50,53 @@
 
   <div class="grid-container">
     <div class="grid-x grid-padding-x">
-      <div class="large-6 cell">
+      <div class="large-3 cell"></div>
+      <div class="large-6 cell align-center">
           <form id="form-id">
-              <h3>VAT checker</h3>
-              <label for="category">Choose category</label>
-              <select id="country-select-id" class="form-control" name="category" required>
-                  <option disabled selected value> -- select a country -- </option>
-                  <option value="EE">Estonia</option>
-                  <option value="FI">Finland</option>
-                  <option value="DE">Germany</option>
-              </select>
-              <label for="product">Product</label>
-              <select id="product-select-id" class="form-control" name="product" required>
-                  <option id="empty-select" disabled selected value> -- select a product -- </option>
-              </select>
+            <div class="grid-container">
+              <div class="grid-x grid-padding-x">
+                <div class="large-12 cell">
+                  <label for="category"><h5 class="text-center">VAT information form</h5></label>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x">
+                <div class="large-1 cell"></div>
+                <div class="large-10 cell">
+                  <label>Select target country
+                    <select id="country-select-id" class="" name="category" required>
+                        <option disabled selected value> -- select a country -- </option>
+                        <option value="EE">Estonia</option>
+                        <option value="FI">Finland</option>
+                        <option value="DE">Germany</option>
+                    </select>
+                </div>
+                <div class="large-1 cell"></div>
+              </div>
+              <div class="grid-x grid-padding-x">
+                <div class="large-12 cell">
+                  <p><div id="default-vat-result-id"></div></p>
+                </div>
+                <div class="large-12 cell">
+                  <p><div id="treshold-vat-result-id"></div></p>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x">
+                <div class="large-1 cell"></div>
+                <div class="large-10 cell">
+                    <label>Select product group
+                      <select id="product-select-id" class="" name="product" required>
+                          <option id="empty-select" disabled selected value> -- select a product -- </option>
+                      </select>
+                    </label>
+                </div>
+                <div class="large-1 cell"></div>
+              </div>
+            </div>
           </form>
+          <p><div id="product-vat-result-id"></div></p>
+          <p><div id="product-description-result-id"></div></p>
       </div>
-      <div class="large-6 cell">
-          <h3>Results</h3>
-          <div id="vat-result-id">
-          </div>
-      </div>
+       <div class="large-3 cell"></div>
     </div>
   </div>
 

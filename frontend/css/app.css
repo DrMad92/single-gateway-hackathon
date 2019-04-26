@@ -13,6 +13,10 @@ h3 {
 h4 {
 	font-weight: 600;
 }
+h5 {
+	font-size: 1.8em;
+	font-weight: 400;
+}
 .text-white, .text-white a, .text-white li,  .text-white h1,  .text-white h2,  .text-white h3,  .text-white h4,  .text-white h5 {
 	color:#fff !important;
 	 -webkit-transition: 0.3s; 
@@ -21,7 +25,10 @@ h4 {
 	color:#ddd !important;
 
 }
-
+/*Form*/
+select {
+	padding:0.5rem 1.9rem 0.5rem 0.5rem !important;
+}
 /*General*/
 .Logo {
 	font-size: 3em;
@@ -69,7 +76,7 @@ h4 {
 .ButtonBack {
 	display: block;
 	width: 100%;
-	padding: 0.5em;
+	padding: 1em;
 	padding-top: 3em;
 	height:195px;
 	text-align: center;
