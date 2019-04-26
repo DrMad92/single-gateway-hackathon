@@ -7,6 +7,8 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/gorilla/mux"
+	"github.com/rs/cors"
 	"github.com/tidwall/gjson"
 )
 
@@ -22,7 +24,7 @@ type query struct {
 }
 
 type countryData struct {
-	StandardRate string            `json:"stadartRate"`
+	StandardRate string            `json:"standardRate"`
 	Categories   map[string]string `json:"categories"`
 }
 
@@ -49,13 +51,15 @@ var deJsonServices = []string{
 }
 
 func main() {
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+	r := mux.NewRouter()
+	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		defer r.Body.Close()
 		var q query
 		if r.Body == nil {
 			http.Error(w, "Please send a request body", 400)
 			return
 		}
+
 		err := json.NewDecoder(r.Body).Decode(&q)
 		if err != nil {
 			http.Error(w, err.Error(), 400)
@@ -68,8 +72,9 @@ func main() {
 		}
 		w.Header().Set("Content-Type", "application/json")
 		w.Write(answer)
-	})
-	log.Fatal(http.ListenAndServe(*host, nil))
+	}).Methods("POST")
+	handler := cors.Default().Handler(r)
+	log.Fatal(http.ListenAndServe(*host, handler))
 }
 
 func (q query) fetchData() countryData {

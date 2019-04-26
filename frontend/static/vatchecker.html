@@ -8,16 +8,19 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/foundation.css">
     <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../style/vatchecker.css">
     <script src="../js/vendor/jquery.js" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="../js/vendor/what-input.js" type="text/javascript"></script>
     <script src="../js/vendor/foundation.min.js" type="text/javascript"></script>
     <script src="../js/app.js" type="text/javascript"></script>
+    <script src="../js/vatchecker.js" type="text/javascript"></script>
 </head>
 <body>
 <div class="top-bar">
   <div class="top-bar-left">
     <ul class="menu">
-      <li class="menu-text"><a href="../index.html">Unitax</a></li> <?php // Unitax logo that has to be linked into landing page ?>
+      <li class="menu-text"><a href="../index.html">Unitax</a></li>
     </ul>
   </div>
   <div class="top-bar-right">
@@ -34,5 +37,30 @@
     </ul>
   </div>
 </div>
+  <div id="wrapper-container">
+    <div class="row">
+      <div id="div-form" class="form-group col-sm-6">
+          <form id="form-id">
+              <h1><b>VAT checker</b></h1>
+              <label for="category"><b>Choose category</b></label>
+              <select id="country-select-id" class="form-control" name="category" required>
+                  <option disabled selected value> -- select a country -- </option>
+                  <option value="EE">Estonia</option>
+                  <option value="FI">Finland</option>
+                  <option value="DE">Germany</option>
+              </select>
+              <label for="product">Product</label>
+              <select id="product-select-id" class="form-control" name="product" required>
+                  <option id="empty-select" disabled selected value> -- select a product -- </option>
+              </select>
+          </form>
+      </div>
+      <div id="div-result" class="col-sm-6">
+          <h1><b>Results</b></h1>
+          <div id="vat-result-id">
+          </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
