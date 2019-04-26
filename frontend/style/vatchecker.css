@@ -1,0 +1,7 @@
+@media only screen and (min-width: 600px) {
+    #wrapper-container {
+        width: auto;
+        max-width: 80%;
+        margin:0 auto;
+    }
+}

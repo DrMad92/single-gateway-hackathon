@@ -36,6 +36,11 @@ $(document).ready(function(){
             $("#vat-result-id").html('<span>VAT: ' + countryData.categories[selectedProduct] + '%</span><br>');
         }
    });
+   $(document).ajaxStart(function() {
+    $(document.body).css({'cursor' : 'wait'});
+    }).ajaxStop(function() {
+        $(document.body).css({'cursor' : 'default'});
+    });
 });
 
 function beautify(string){
