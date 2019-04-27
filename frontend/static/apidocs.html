@@ -71,5 +71,44 @@ POST /
         </tbody>
     </table>
 </div>
+<div class="grid-container">
+<h4>Example:</h4>
+<table class="radius bordered shadow">
+<thead>
+<tr>
+<th>
+<pre>
+curl -X POST 176.112.147.202:9999 -d '{"country":"EE"}'
+</pre>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<pre>
+{  
+   "standardRate":"20",
+   "threshold":"35000",
+   "categories":[  
+      {  
+         "name":"pharmaceutical_products",
+         "description":"Pharmaceutical products of a kind normally used ...",
+         "comments":"Medicinal products, contraceptive preparations, ...",
+         "reducedRate":"9"
+      },
+      {  
+         "name":"medical_equipment",
+         "description":"Medical equipment, aids and other appliances ...",
+         "comments":"Medicinal products, contraceptive preparations, ...",
+         "reducedRate":"9"
+      },
+      ...
+</pre>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 </body>
 </html>
