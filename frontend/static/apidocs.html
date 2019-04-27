@@ -35,31 +35,38 @@
 <div class="spacer"></div>
 <div class="grid-container">
     <h3>Methods</h3>
+    <h6>Get information about specific country</h6>
 <div class="large-6 cell">
 POST /
 </div>
     <table class="radius bordered shadow">
         <tbody>
             <tr>
-                <td>Request: application/json</td>
+                <td>Request:</td>
             </tr>
             <tr>
-                <td>object:country: string</td>
+                <td><pre>{
+    "country": &ltstring&gt
+}</pre></td>
             </tr>
             <tr>
-                <td>Response: application/json</td>
+                <td>Response:</td>
             </tr>
             <tr>
-                <td><div id="country-div-id" class="large-12 cell resultGroup">
-                object:
-                    standardRate: string
-                    threshold: string
-                    categories: array[object]
-                        name: string
-                        description: string
-                        comments: string
-                        reducedRate: string
-                </div></td>
+                <td>
+                <pre>
+{
+    "standardRate": &ltstring&gt
+    "threshold": &ltstring&gt
+    "categories": [{
+        "name": &ltstring&gt
+        "description": &ltstring&gt
+        "comments": &ltstring&gt
+        "reducedRate": &ltstring&gt
+    }]
+}
+                </pre>
+                </td>
             </tr>
         </tbody>
     </table>
