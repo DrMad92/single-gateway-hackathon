@@ -19,8 +19,8 @@ $(document).ready(function(){
         {
             countryData = resp;
             categoriesList = resp.categories;
-            $("#default-vat-result-id").html("Default VAT: " + countryData.standardRate);
-            $("#treshold-vat-result-id").html("Threshold: " + countryData.threshold);
+            $("#default-vat-result-id").html("Default VAT: " + countryData.standardRate + "%");
+            $("#treshold-vat-result-id").html("Threshold: " + countryData.threshold + " \u20AC");
             $("#product-select-id").empty();
             $("#product-select-id").html('<option id="empty-select" disabled selected value> -- select a product -- </option>\
                                         <option id="other" value="other"> Other </option>');
@@ -46,7 +46,7 @@ $(document).ready(function(){
               });
             $("#product-comment-result-id").html('Comment: ' + category.comments);
             $("#product-description-result-id").html('Description: ' + category.description);
-            $("#product-vat-result-id").html('VAT: ' + category.reducedRate);
+            $("#product-vat-result-id").html(beautify(category.name) + ' VAT: ' + category.reducedRate + '%');
         }
    });
    $(document).ajaxStart(function() {
