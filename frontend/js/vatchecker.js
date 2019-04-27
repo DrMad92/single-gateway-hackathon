@@ -44,7 +44,9 @@ $(document).ready(function(){
                     return;
                 }
               });
-            $("#product-comment-result-id").html('Comment: ' + category.comments);
+            if (category.comments != ""){
+                $("#product-comment-result-id").html('Comment: ' + category.comments);
+            }
             $("#product-description-result-id").html('Description: ' + category.description);
             $("#product-vat-result-id").html(beautify(category.name) + ' VAT: ' + category.reducedRate + '%');
         }
