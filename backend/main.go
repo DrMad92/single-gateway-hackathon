@@ -8,7 +8,6 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/rs/cors"
 	"github.com/tidwall/gjson"
 )
 
@@ -52,6 +51,11 @@ func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		defer r.Body.Close()
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+		w.Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization")
+		if r.Method == "OPTIONS" {
+			return
+		}
 		var q query
 		if r.Body == nil {
 			http.Error(w, "Please send a request body", 400)
@@ -70,9 +74,8 @@ func main() {
 		}
 		w.Header().Set("Content-Type", "application/json")
 		w.Write(answer)
-	}).Methods("POST")
-	handler := cors.Default().Handler(r)
-	log.Fatal(http.ListenAndServe(*host, handler))
+	}).Methods("POST", "OPTIONS")
+	log.Fatal(http.ListenAndServe(*host, r))
 }
 
 func (q query) fetchData() countryData {

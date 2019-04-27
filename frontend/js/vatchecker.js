@@ -11,7 +11,7 @@ $(document).ready(function(){
         }
         $.ajax({
             method: "POST",
-            url: "http://localhost:9999",
+            url: "http://176.112.147.202:9999",
             dataType: 'json',
             contentType: 'application/json',
             data: JSON.stringify(data),
