@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unitax - Tax information made simple</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/foundation.css">
+    <link rel="stylesheet" href="../css/app.css">
+    <script src="../js/vendor/jquery.js" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="../js/vendor/what-input.js" type="text/javascript"></script>
+    <script src="../js/vendor/foundation.min.js" type="text/javascript"></script>
+    <script src="../js/app.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="top-bar text-white">
+  <div class="top-bar-left">
+    <ul class="menu">
+      <li class="menu-text"><a href="../index.html" class="Logo">UNITAX</a></li>
+    </ul>
+  </div>
+  <div class="top-bar-right">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li>
+        <a href="vatchecker.html">UNIVAT</a>
+      </li>
+      <li><a href="#" class="disabled">Roadmap</a></li>
+      <li><a href="apidocs.html">API docs</a></li>
+      <li><a href="#" class="disabled">Contact</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="grid-container">
+POST /
+Request Body: application/json
+object:
+    country: string
+
+Response: application/json
+object:
+    standardRate: string
+    threshold: string
+    categories: array
+        object
+            name: string
+            description: string
+            comments: string
+            reducedRate: string
+</div>
+</body>
+</html>

@@ -19,7 +19,7 @@ $(document).ready(function(){
         {
             countryData = resp;
             categoriesList = resp.categories;
-            $("#default-vat-result-id").html("Default VAT: " + countryData.standardRate + "%");
+            $("#default-vat-result-id").html("Standard VAT: " + countryData.standardRate + " %");
             $("#treshold-vat-result-id").html("Threshold: " + countryData.threshold + " \u20AC");
             $("#product-select-id").empty();
             $("#product-select-id").html('<option id="empty-select" disabled selected value> -- select a product -- </option>\
@@ -34,7 +34,7 @@ $(document).ready(function(){
         $("#vat-result-id").empty();
         var selectedProduct = $(this).children("option:selected").val();
         if (selectedProduct == "other") {
-            $("#vat-result-id").html('<span>VAT: ' + countryData.standardRate + '%</span><br>');
+            $("#vat-result-id").html('<span>VAT: ' + countryData.standardRate + ' %</span><br>');
         }
         else {
             var category;
@@ -48,7 +48,7 @@ $(document).ready(function(){
                 $("#product-comment-result-id").html('Comment: ' + category.comments);
             }
             $("#product-description-result-id").html('Description: ' + category.description);
-            $("#product-vat-result-id").html(beautify(category.name) + ' VAT: ' + category.reducedRate + '%');
+            $("#product-vat-result-id").html(beautify(category.name) + ' VAT: ' + category.reducedRate + ' %');
         }
    });
    $(document).ajaxStart(function() {
