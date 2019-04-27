@@ -1,40 +1,43 @@
 $(document).ready(function(){
+    $("#country-div-id, #product-div-id").hide();
     var countryData = {};
     var categoriesList = [];
     $("select#country-select-id").change(function(){
-    var selectedCountry = $(this).children("option:selected").val();
-    var data = {
-        country: selectedCountry
-    }
-    $.ajax({
-        method: "POST",
-        url: "http://localhost:9999",
-        dataType: 'json',
-        contentType: 'application/json',
-        data: JSON.stringify(data),
-        error: function(err){
-             alert(err);
-        },
-        success: function(resp)
-        {
-            countryData = resp;
-            categoriesList = resp.categories;
-            $("#default-vat-result-id").html("Standard VAT: " + countryData.standardRate + " %");
-            $("#treshold-vat-result-id").html("Threshold: " + countryData.threshold + " \u20AC");
-            $("#product-select-id").empty();
-            $("#product-select-id").html('<option id="empty-select" disabled selected value> -- select a product -- </option>\
-                                        <option id="other" value="other"> Other </option>');
-            $.each(categoriesList, function(key,value) {
-                $("#empty-select").after('<option value="' + value.name + '">' + beautify(value.name) + '</option>');
-              })
+        $("#country-div-id").fadeIn();
+        var selectedCountry = $(this).children("option:selected").val();
+        var data = {
+            country: selectedCountry
         }
-      });
+        $.ajax({
+            method: "POST",
+            url: "http://localhost:9999",
+            dataType: 'json',
+            contentType: 'application/json',
+            data: JSON.stringify(data),
+            error: function(err){
+                alert(err);
+            },
+            success: function(resp)
+            {
+                countryData = resp;
+                categoriesList = resp.categories;
+                $("#default-vat-result-id").html("<b>Standard VAT</b>: " + countryData.standardRate + " %");
+                $("#treshold-vat-result-id").html("<b>Threshold</b>: " + countryData.threshold + " \u20AC");
+                $("#product-select-id").empty();
+                $("#product-select-id").html('<option id="empty-select" disabled selected value> -- select a product -- </option>\
+                                            <option id="other" value="other"> Other </option>');
+                $.each(categoriesList, function(key,value) {
+                    $("#empty-select").after('<option value="' + value.name + '">' + beautify(value.name) + '</option>');
+                })
+            }
+        });
    });
    $("select#product-select-id").change(function(){
         $("#vat-result-id").empty();
+        $("#product-div-id").fadeIn();
         var selectedProduct = $(this).children("option:selected").val();
         if (selectedProduct == "other") {
-            $("#vat-result-id").html('<span>VAT: ' + countryData.standardRate + ' %</span><br>');
+            $("#vat-result-id").html('<span><b>VAT</b>: ' + countryData.standardRate + ' %</span><br>');
         }
         else {
             var category;
@@ -45,10 +48,10 @@ $(document).ready(function(){
                 }
               });
             if (category.comments != ""){
-                $("#product-comment-result-id").html('Comment: ' + category.comments);
+                $("#product-comment-result-id").html('<b>Comment</b>: ' + category.comments);
             }
-            $("#product-description-result-id").html('Description: ' + category.description);
-            $("#product-vat-result-id").html(beautify(category.name) + ' VAT: ' + category.reducedRate + ' %');
+            $("#product-description-result-id").html('<b>Description</b>: ' + category.description);
+            $("#product-vat-result-id").html('<b>' + beautify(category.name) + ' VAT</b>: ' + category.reducedRate + ' %');
         }
    });
    $(document).ajaxStart(function() {

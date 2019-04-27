@@ -32,23 +32,37 @@
     </ul>
   </div>
 </div>
-
+<div class="spacer"></div>
 <div class="grid-container">
+    <h3>Methods</h3>
+<div class="large-6 cell">
 POST /
-Request Body: application/json
-object:
-    country: string
-
-Response: application/json
-object:
-    standardRate: string
-    threshold: string
-    categories: array
-        object
-            name: string
-            description: string
-            comments: string
-            reducedRate: string
+</div>
+    <table class="radius bordered shadow">
+        <tbody>
+            <tr>
+                <td>Request: application/json</td>
+            </tr>
+            <tr>
+                <td>object:country: string</td>
+            </tr>
+            <tr>
+                <td>Response: application/json</td>
+            </tr>
+            <tr>
+                <td><div id="country-div-id" class="large-12 cell resultGroup">
+                object:
+                    standardRate: string
+                    threshold: string
+                    categories: array[object]
+                        name: string
+                        description: string
+                        comments: string
+                        reducedRate: string
+                </div></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 </body>
 </html>

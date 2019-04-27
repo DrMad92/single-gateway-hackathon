@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/foundation.css">
     <link rel="stylesheet" href="../css/app.css">
-    <link rel="stylesheet" href="../style/vatchecker.css">
+    <link rel="stylesheet" href="../css/vatchecker.css">
     <script src="../js/vendor/jquery.js" type="text/javascript"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="../js/vendor/what-input.js" type="text/javascript"></script>
@@ -30,7 +30,7 @@
         <a href="#">UNIVAT</a>
       </li>
       <li><a href="#" class="disabled">Roadmap</a></li>
-      <li><a href="#">API docs</a></li>
+      <li><a href="apidocs.html">API docs</a></li>
       <li><a href="#" class="disabled">Contact</a></li>
     </ul>
   </div>
@@ -86,7 +86,7 @@
                 </div>
               </div>
               <div class="grid-x grid-padding-x">
-                <div class="large-12 cell resultGroup">
+                <div id="country-div-id" class="large-12 cell resultGroup">
                   <div class="resultParagraph" id="default-vat-result-id"></div>
                   <div class="resultParagraph" id="treshold-vat-result-id"></div>
                 </div>
@@ -101,7 +101,7 @@
                 </div>
               </div>
               <div class="grid-x grid-padding-x">
-                <div class="large-12 cell resultGroup">
+                <div id="product-div-id" class="large-12 cell resultGroup">
                   <div class="resultParagraph" id="product-vat-result-id"></div>
                   <div class="resultParagraph" id="product-description-result-id"></div>
                   <div class="resultParagraph" id="product-comment-result-id"></div>
@@ -114,34 +114,5 @@
     </div>
   </div>
 <div class="spacer"></div>
-  <!--div id="wrapper-container">
-    <div class="row">
-      <div id="div-form" class="form-group col-sm-6">
-          <form id="form-id">
-              <h1><b>VAT checker</b></h1>
-              <label for="category"><b>Choose category</b></label>
-              <select id="country-select-id" class="form-control" name="category" required>
-                  <option disabled selected value> -- select a country -- </option>
-                  <option value="EE">Estonia</option>
-                  <option value="FI">Finland</option>
-                  <option value="DE">Germany</option>
-              </select>
-              <label for="product">Product</label>
-              <select id="product-select-id" class="form-control" name="product" required>
-                  <option id="empty-select" disabled selected value> -- select a product -- </option>
-              </select>
-          </form>
-      </div>
-      <div id="div-result" class="col-sm-6">
-          <h1><b>Results</b></h1>
-          <div id="vat-result-id">
-          </div>
-      </div>
-    </div>
-  </div-->
-  <!--div class="spacer"></div>
-  <div class="grid-container full">
-    <p class="footerInfo text-center">© 2019 United Taxation, All Rights Reserved.</p>
-  </div-->
 </body>
 </html>
