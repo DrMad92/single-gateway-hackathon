@@ -4,6 +4,7 @@ $(document).ready(function(){
     var categoriesList = [];
     $("select#country-select-id").change(function(){
         $("#country-div-id").fadeIn();
+        $("#product-div-id").fadeOut();
         var selectedCountry = $(this).children("option:selected").val();
         var data = {
             country: selectedCountry
@@ -33,11 +34,13 @@ $(document).ready(function(){
         });
    });
    $("select#product-select-id").change(function(){
-        $("#vat-result-id").empty();
+        $("#product-comment-result-id").html('');
+        $("#product-description-result-id").html('');
+        $("#product-vat-result-id").html('');
         $("#product-div-id").fadeIn();
         var selectedProduct = $(this).children("option:selected").val();
         if (selectedProduct == "other") {
-            $("#vat-result-id").html('<span><b>VAT</b>: ' + countryData.standardRate + ' %</span><br>');
+            $("#product-vat-result-id").html('<span><b>VAT</b>: ' + countryData.standardRate + ' %</span><br>');
         }
         else {
             var category;
