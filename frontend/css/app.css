@@ -15,7 +15,11 @@ h4 {
 }
 h5 {
 	font-size: 1.8em;
-	font-weight: 400;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+.bold {
+	font-weight: 600;
 }
 .text-white, .text-white a, .text-white li,  .text-white h1,  .text-white h2,  .text-white h3,  .text-white h4,  .text-white h5 {
 	color:#fff !important;
@@ -26,8 +30,23 @@ h5 {
 
 }
 /*Form*/
+.formHeading {
+	margin-bottom:1em;
+}
+.resultParagraph {
+	margin-bottom: 0.3em;
+}
 select {
 	padding:0.5rem 1.9rem 0.5rem 0.5rem !important;
+}
+.resultGroup {
+	background-color: #f0f0f0;
+    padding-top: 0,1em;
+    padding: 1.4em 0em 1em 1em;
+    border-radius: 10px;
+    margin-top: 0.3em;
+    margin-bottom: 1em;
+    -webkit-transition: 0.3s; 
 }
 /*General*/
 .Logo {
@@ -52,6 +71,9 @@ select {
 	margin-bottom: 0.1em;
     margin-right: 0.3em;
 }
+.makeItTini {
+	font-size: 0.4em;
+}
 /*Top-bar*/
 .top-bar, .top-bar .menu {
 	background-color: #258faf;
@@ -61,6 +83,16 @@ select {
 }
 .back-blue {
 	background-color: #258faf;
+}
+.apiDocumentationLink {
+	text-align: left;
+	display: block;
+	opacity: 0.7;
+	font-size: 0.8em;
+}
+.apiDocumentationLink:hover{
+	opacity: 1;
+	-webkit-transition: 0.3s; 
 }
 /*Landing page*/
 .background-img {

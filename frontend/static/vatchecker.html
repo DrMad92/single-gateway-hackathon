@@ -21,7 +21,7 @@
 <div class="top-bar text-white">
   <div class="top-bar-left">
     <ul class="menu">
-      <li class="menu-text"><a href="../index.html" class="Logo">UNITAX</a></li>
+      <li class="menu-text"><a href="../index.html" class="Logo">UNITAX<span class="makeItTini">.eu</span></a></li>
     </ul>
   </div>
   <div class="top-bar-right">
@@ -35,19 +35,34 @@
     </ul>
   </div>
 </div>
-  
+
+<div class="spacer"></div>
+  <!--div class="grid-container">
+     <div class="grid-x grid-padding-x">
+        <div class="large-12 cell">
+          <nav aria-label="You are here:" role="navigation">
+          <ul class="breadcrumbs">
+            <li><a href="../index.html">Home</a></li>
+            <li>
+              <span class="show-for-sr">Current: </span> UNIVAT
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div-->
+
+
   <div class="grid-container">
-    <div class="spacer"></div>
       <div class="grid-x grid-padding-x">
         <div class="large-12 cell text-left">
             <h3>UNIVAT Service</h3>
             <p>Univat service is a great way to explore VAT taxation in export countries. Just select country and product categories (if nessesary), and you will be provided information that help you underestand, how and what belongs into VAT taxation in target country.</p>
-            <a class="apiDocumentationLink">Univat API documentation</a>
+            <a class="apiDocumentationLink">API documentation</a>
         </div>
       </div>
   </div>
-  <hr/>
-
+<div class="spacer"></div>
   <div class="grid-container">
     <div class="grid-x grid-padding-x">
       <div class="large-3 cell"></div>
@@ -56,12 +71,11 @@
             <div class="grid-container">
               <div class="grid-x grid-padding-x">
                 <div class="large-12 cell">
-                  <label for="category"><h5 class="text-center">VAT information form</h5></label>
+                  <label for="category"><h5 class="text-center formHeading">VAT information form</h5></label>
                 </div>
               </div>
               <div class="grid-x grid-padding-x">
-                <div class="large-1 cell"></div>
-                <div class="large-10 cell">
+                <div class="large-12 cell">
                   <label>Select target country
                     <select id="country-select-id" class="" name="category" required>
                         <option disabled selected value> -- select a country -- </option>
@@ -70,37 +84,36 @@
                         <option value="DE">Germany</option>
                     </select>
                 </div>
-                <div class="large-1 cell"></div>
               </div>
               <div class="grid-x grid-padding-x">
-                <div class="large-12 cell">
-                  <p><div id="default-vat-result-id"></div></p>
-                </div>
-                <div class="large-12 cell">
-                  <p><div id="treshold-vat-result-id"></div></p>
+                <div class="large-12 cell resultGroup">
+                  <div class="resultParagraph" id="default-vat-result-id"></div>
+                  <div class="resultParagraph" id="treshold-vat-result-id"></div>
                 </div>
               </div>
               <div class="grid-x grid-padding-x">
-                <div class="large-1 cell"></div>
-                <div class="large-10 cell">
+                <div class="large-12 cell">
                     <label>Select product group
                       <select id="product-select-id" class="" name="product" required>
                           <option id="empty-select" disabled selected value> -- select a product -- </option>
                       </select>
                     </label>
                 </div>
-                <div class="large-1 cell"></div>
+              </div>
+              <div class="grid-x grid-padding-x">
+                <div class="large-12 cell resultGroup">
+                  <div class="resultParagraph" id="product-vat-result-id"></div>
+                  <div class="resultParagraph" id="product-description-result-id"></div>
+                  <div class="resultParagraph" id="product-comment-result-id"></div>
+                </div>
               </div>
             </div>
           </form>
-          <p><div id="product-vat-result-id"></div></p>
-          <p><div id="product-description-result-id"></div></p>
-          <p><div id="product-comment-result-id"></div></p>
       </div>
        <div class="large-3 cell"></div>
     </div>
   </div>
-
+<div class="spacer"></div>
   <!--div id="wrapper-container">
     <div class="row">
       <div id="div-form" class="form-group col-sm-6">
@@ -126,9 +139,9 @@
       </div>
     </div>
   </div-->
-  <div class="spacer"></div>
+  <!--div class="spacer"></div>
   <div class="grid-container full">
     <p class="footerInfo text-center">© 2019 United Taxation, All Rights Reserved.</p>
-  </div>
+  </div-->
 </body>
 </html>
